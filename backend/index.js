@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 // dotenv
 require('dotenv').config();
 // routes
-const routes = require('./routes');
+const routes = require('./src/routes');
 const User = require('./src/models/User');
 
 // middleware
