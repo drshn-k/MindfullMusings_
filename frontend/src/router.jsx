@@ -7,6 +7,7 @@ import NewBlog from "./components/NewBlog/NewBlog.jsx";
 import BlogList from "./components/BlogList/BlogList.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import NavBar from "./components/NavBar/NavBar";
+import Logout from "./components/Logout/Logout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,18 @@ const router = createBrowserRouter([
         path: "signup",
         element: <Signup />,
       },
+      {
+        path: "logout",
+        element: <Logout />,
+      },
+      {
+        path: "login",
+        element: <h1>Login(placeholder)</h1>,
+      },
+      {
+        path: "*",
+        element: <h1>Not Found</h1>,
+      }
     ]
   }]);
 
