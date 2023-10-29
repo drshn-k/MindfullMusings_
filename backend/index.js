@@ -76,7 +76,7 @@ passport.use(new LocalStrategy({
             const passwordValid = await argon2.verify(user.password, password)
             console.log(passwordValid)
             if (!passwordValid) { 
-                return done(null, false); 
+                return done(null, false);
             }
             return done(null, user);
     }catch(err){

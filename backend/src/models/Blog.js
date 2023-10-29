@@ -9,7 +9,7 @@ const AuthorSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true
+        required: [true, 'Email is required!'],
     }
 });
 
