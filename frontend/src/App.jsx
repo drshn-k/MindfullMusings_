@@ -1,11 +1,11 @@
-import LoginSignup from "./components/loginSignup/LoginSignup.jsx";
+import LoginSignUp from "./components/loginSignup/loginSignup.jsx";
 
 
 
 function App() {
   return(
     <div>
-     <LoginSignup/>
+     <LoginSignUp/>
     </div>
   )
 }

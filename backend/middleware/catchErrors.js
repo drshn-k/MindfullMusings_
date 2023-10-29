@@ -7,7 +7,10 @@ function catchErrors(error, req, res, next) {
           errors[key] = error.errors[key].message;
         });
   
-        return res.status(400).send(errors);
+        return res.status(400).send({
+          success: false,
+          errors
+        });
     }
     res.json({ success: false, error: "Something went wrong"})
 }
