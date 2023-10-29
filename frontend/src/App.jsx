@@ -1,8 +1,12 @@
+import LoginSignup from "./components/loginSignup/LoginSignup.jsx";
+
+
+
 function App() {
   return(
-    <h1 className='text-4xl text-center text-red-500'>
-      Start blogging!
-    </h1>
+    <div>
+     <LoginSignup/>
+    </div>
   )
 }
 
