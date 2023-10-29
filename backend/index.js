@@ -4,8 +4,12 @@ const app = express();
 const port = 3000;
 const LocalStrategy = require('passport-local').Strategy;
 
+// cookie parser
+const cookieParser = require('cookie-parser');
+
 //session
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
 // argon2
 const argon2 = require('argon2');
@@ -22,14 +26,21 @@ require('dotenv').config();
 const routes = require('./src/routes');
 const User = require('./src/models/User');
 
+
 // middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
+app.use(cookieParser("kfdsjkgfdsjfjhfjdsfjdfhgsdjgjfsdhjfgdsfh"));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new FileStore()
 }));
 // connect to database
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -73,6 +84,7 @@ passport.use(new LocalStrategy({
     }
 }));
 
+app.use(passport.session())
 // routes
 app.use('/', routes);
 app.use(catchErrors);
