@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../loginSignup/LoginSignup.css';
 const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
 
@@ -19,12 +20,12 @@ const BlogList = () => {
 
     return (
         <div>
-            <h1 className='text-4xl'>Blog List</h1>
-            <div className='flex flex-col'>
+            <h1 className='text-4xl text-center text-white m-3 '>Blog List</h1>
+            <div className='flex flex-col gap-5'>
                 {
                     blogs.map((blog) => {
                         return (
-                            <div key={blog._id} className='bg-white'>
+                            <div key={blog._id} className='flex  input max-w-md p-5 m-auto bg-white'>
                                 <h1 className='text-2xl'>{blog.title}</h1>
                                 <p>{
                                     blog.content.length > 50 ? blog.content.substring(0, 50) + '...' : blog.content

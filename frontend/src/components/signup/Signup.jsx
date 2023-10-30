@@ -75,7 +75,7 @@ const Signup = () => {
           </div>
         </div>
 
-        <div className="submit-container">
+        <div className="submit m-auto mt-3">
           <div
             className="submit"
             onClick={() => {
